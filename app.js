@@ -15,7 +15,7 @@ const apiRequest = async () => {
     }
   });
 
-  // console.log(response);
+  console.log(response);
 
   // Return the response in JSON format
   return response.json();
@@ -26,15 +26,27 @@ const updatePage = async () => {
 
   // Make API request and get an array of fruit objects
   const fruitsArray = await apiRequest();
-  // console.log(fruitsArray);
+  console.log(fruitsArray);
 
   // TODO: Use either `map` and/or `filter` to extract some data from the array of fruit objects
   // For example, find "name of all fruits whose sugar > 15",
 
-  // TODO: Create a new HTML element to display your data
+  const leastSugarArray = fruitsArray.filter((item) => {return item.nutritions.sugar < 3})
+  const someSugarArray = fruitsArray.filter((item) => {return item.nutritions.sugar < 5 && item.nutritions.sugar > 3})
+  const mostSugarArray = fruitsArray.filter((item) => {return item.nutritions.sugar > 5})
 
-  // TODO: Append your new element to the page
+  console.log(leastSugarArray);
 
+  const keyArray = leastSugarArray.map((item) => {return item.name})
+
+  const newElement = document.createElement('div')
+  newElement.innerHTML = "A fruit with little sugar is " + leastSugarArray[0].name
+  newElement.innerHTML.append
+
+
+  const existingElement = document.getElementById('cs1300-gallery');
+  existingElement.append(newElement);
+  console.log("Test")
 }
 
 // SAMPLE CODE of how to create and append a new HTML element to the page

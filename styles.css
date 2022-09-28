@@ -18,8 +18,8 @@ Selects all image tags and makes them 500px;
 }
 
 img {
-  height: 15rem;
-  width: 15rem;
+  height: 25rem;
+  width: 25rem;
   padding: 0.5rem;
   margin: 0;
 }
